@@ -17,6 +17,8 @@ rollbar.log('Hello world!')
 
 
 const app = express()
+app.use(express.json())
+app.use(cors())
 
 
 const students = ["Justin"]
@@ -52,7 +54,6 @@ app.post("/api/students", (req, res) => {
 })
 
 app.use(rollbar.errorHandler())
-
 const port = process.env.PORT || 4545
 
 app.listen(port, () => {
