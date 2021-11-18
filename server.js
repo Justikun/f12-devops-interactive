@@ -27,12 +27,12 @@ app.get("/", (req, res) => {
     rollbar.info("HTML file server successfully")
 })
 
-app.get("api/students", (req, res) => {
+app.get("/api/students", (req, res) => {
     res.status(200).send(students)
     rollbar.info("Someone got the list of students on page load")
 })
 
-app.post("api/students", (req, res) => {
+app.post("/api/students", (req, res) => {
     let {name} = req.body
     name = name.trim()
 
